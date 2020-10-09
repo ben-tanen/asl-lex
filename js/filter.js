@@ -431,12 +431,13 @@ function refreshData(node) {
     });
 
     // set video attributes to show motion
-    video_ID  = node['video'];
+    video_ID  = node['video_vim'];
 
     if (video_ID == '') {
-        $('#word_vid').css('display','none');
+        $('#word_vid_container').css('display','none');
     } else {
-        videoLink = "https://www.youtube.com/embed/" + video_ID + "?showinfo=0&rel=0&loop=1&modestbranding=1&controls=0";
+        $('#word_vid_container').css('display','block');
+        videoLink = "https://player.vimeo.com/video/" + video_ID + "?title=0&byline=0&portrait=0&background=1&loop=1"
         $('#word_vid').attr('src', videoLink);
         $('#word_vid').css('display','block');
     }
